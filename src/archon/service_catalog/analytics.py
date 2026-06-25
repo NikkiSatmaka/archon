@@ -1,0 +1,48 @@
+from archon.service_catalog.base import Service
+
+SERVICES: list[Service] = [
+    Service(
+        name='Amazon EMR',
+        provider='aws',
+        category='analytics',
+        description='Managed big data frameworks (Spark, Hadoop, Hive)',
+        use_cases=['Big data processing', 'ETL', 'Machine learning pipelines'],
+        pricing_model='Per-instance-hour + cluster overhead',
+        limitations=['Cluster provisioning takes minutes', 'Requires expertise in big data tools'],
+        typical_latency='Minutes to hours for jobs',
+        compliance=['SOC', 'ISO 27001', 'HIPAA'],
+    ),
+    Service(
+        name='Amazon Redshift',
+        provider='aws',
+        category='analytics',
+        description='Cloud data warehouse',
+        use_cases=['BI and reporting', 'Analytics', 'Data lake queries'],
+        pricing_model='Per-node-hour + storage',
+        limitations=['Scaling requires node changes', 'Concurrency limits on smaller instances'],
+        typical_latency='Seconds to minutes for queries',
+        compliance=['SOC', 'ISO 27001', 'HIPAA', 'PCI DSS'],
+    ),
+    Service(
+        name='Google BigQuery',
+        provider='gcp',
+        category='analytics',
+        description='Serverless data warehouse with SQL',
+        use_cases=['Analytics', 'BI dashboards', 'Data exploration'],
+        pricing_model='Per-TB scanned (on-demand) or flat-rate slots',
+        limitations=['No indexes', 'Cost can be unpredictable with on-demand pricing'],
+        typical_latency='Seconds even on TB-scale data',
+        compliance=['SOC', 'ISO 27001', 'HIPAA', 'PCI DSS'],
+    ),
+    Service(
+        name='Azure Synapse Analytics',
+        provider='azure',
+        category='analytics',
+        description='Analytics service with data warehouse and big data capabilities',
+        use_cases=['Enterprise data warehousing', 'Big data analytics'],
+        pricing_model='Per-DWU (Data Warehouse Unit)',
+        limitations=['Complexity', 'Cost management'],
+        typical_latency='Seconds to minutes',
+        compliance=['SOC', 'ISO 27001', 'HIPAA', 'PCI DSS', 'FedRAMP'],
+    ),
+]

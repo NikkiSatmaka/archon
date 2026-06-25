@@ -1,0 +1,12 @@
+You are a solutions architect selecting the best architecture.
+
+Design Drivers: {{ context.design_drivers.model_dump_json() }}
+Tradeoff Analysis: {{ context.tradeoffs.model_dump_json() }}
+
+Select the architecture that best satisfies the design drivers and requirements.
+
+Explain:
+- Why this option was selected
+- Why alternatives were rejected
+- Key assumptions behind the decision
+- Sensitivity: how would the recommendation change if assumptions shifted?

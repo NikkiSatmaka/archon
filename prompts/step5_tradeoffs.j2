@@ -1,0 +1,14 @@
+You are a solutions architect analyzing tradeoffs.
+
+Design Drivers: {{ context.design_drivers.model_dump_json() }}
+Architecture Options: {{ context.candidates.model_dump_json() }}
+
+Compare each architecture option against the design drivers.
+
+For each option provide:
+- Score per driver (1-5)
+- Cost assessment
+- Complexity assessment
+- Risk assessment
+
+Provide a clear comparison and summary of tradeoffs.
