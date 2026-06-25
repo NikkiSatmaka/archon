@@ -9,6 +9,8 @@ recommendation report, output as a structured Pydantic model.
 ## Tech Stack
 
 - Python 3.12+, `uv` for package management
+- **`src/` layout** — `archon` lives under `src/`; tests import it via
+  `pythonpath = ["src"]` in `pyproject.toml` (no editable install needed)
 - Pydantic v2 for all data models
 - **Pydantic AI** for the agent framework (built by the Pydantic team)
 - Pyrefly (strict mode) for static type checking
@@ -236,5 +238,7 @@ uv run ruff check src/ --fix     # auto-fix lint issues
 uv run ruff format src/          # format code
 ```
 
-> **Never use `uv pip install`** — it bypasses `pyproject.toml`, skips the lockfile,
-> and can silently install into the wrong environment (system or user site-packages).
+> **Never use `uv pip install`** (including `uv pip install -e .`) — it bypasses
+> `pyproject.toml`, skips the lockfile, and can silently install into the wrong
+> environment (system or user site-packages). If the package is not importable,
+> check `pythonpath` in `[tool.pytest.ini_options]` or run `uv sync`.
